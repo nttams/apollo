@@ -26,10 +26,10 @@ func MinLovelacePostAlonzo(
 	output TransactionOutput.TransactionOutput,
 	context Base.ChainContext,
 ) (int64, error) {
-	constantOverhead := 200
+	constantOverhead := 0
 	amt := output.GetValue()
 	if amt.Coin == 0 {
-		amt.Coin = 1_000_000
+		amt.Coin = 0
 	}
 	tmp_out := TransactionOutput.TransactionOutput{
 		IsPostAlonzo: true,

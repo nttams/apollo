@@ -71,7 +71,8 @@ type ProtocolParameters struct {
 }
 
 func (p ProtocolParameters) GetCoinsPerUtxoByte() int {
-	return 4310
+	// TODO: bro, not cool. Don't hard code
+	return 0
 }
 
 type Input struct {

@@ -1293,7 +1293,7 @@ func (b *Apollo) Complete() (*Apollo, error) {
 		}
 		for !selectedAmount.Greater(
 			requestedAmount.Add(
-				Value.Value{Am: Amount.Amount{}, Coin: 1_000_000, HasAssets: false},
+				Value.Value{Am: Amount.Amount{}, Coin: 0, HasAssets: false},
 			),
 		) {
 
@@ -1538,11 +1538,11 @@ func (b *Apollo) addChangeAndFee() (*Apollo, error) {
 	}
 	if change.GetCoin() < minLovelaceRequired {
 		if len(b.getAvailableUtxos()) == 0 {
-			return b, errors.New("no remaining UTxOs")
+			return b, errors.New("no remaining UTxOs1")
 		}
 		sortedUtxos := SortUtxos(b.getAvailableUtxos())
 		if len(sortedUtxos) == 0 {
-			return b, errors.New("no remaining UTxOs")
+			return b, errors.New("no remaining UTxOs2")
 		}
 		b.preselectedUtxos = append(b.preselectedUtxos, sortedUtxos[0])
 		b.usedUtxos = append(b.usedUtxos, sortedUtxos[0].GetKey())

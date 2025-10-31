@@ -10,6 +10,10 @@ import (
 	"github.com/Salvionied/apollo/txBuilding/Backend/MaestroChainContext"
 )
 
+func NewHydraBackend() FixedChainContext.FixedChainContext {
+	return FixedChainContext.InitHydraChainContext()
+}
+
 /*
 *
 NewEmptyBackend creates and returns an empty FixedChainContext instance,

@@ -42,6 +42,19 @@ type FixedChainContext struct {
 	GenesisParams  Base.GenesisParameters
 }
 
+func InitHydraChainContext() FixedChainContext {
+	c := InitFixedChainContext()
+
+	c.ProtocolParams.MinFeeCoefficient = 0
+	c.ProtocolParams.MinFeeConstant = 0
+	c.ProtocolParams.MaxTxSize = 1048576
+	c.ProtocolParams.CoinsPerUtxoWord = "0"
+	c.ProtocolParams.PriceMem = 0
+	c.ProtocolParams.PriceStep = 0
+
+	return c
+}
+
 func InitFixedChainContext() FixedChainContext {
 	return FixedChainContext{ProtocolParams: Base.ProtocolParameters{
 		MinFeeConstant:        155381,

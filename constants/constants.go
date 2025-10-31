@@ -2,7 +2,7 @@ package constants
 
 import "github.com/Salvionied/apollo/serialization/Key"
 
-const MIN_LOVELACE = 1000000
+const MIN_LOVELACE = 0
 
 type Network int
 
